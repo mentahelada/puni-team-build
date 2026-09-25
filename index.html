@@ -689,6 +689,7 @@
   </footer>
 
   <script src="character.js"></script>
+  <script src="watches.js"></script>
 
   <script>
 
@@ -700,7 +701,7 @@
 
     // Official list of tribes, used to fill the "Filter by tribe" dropdown.
     // A character's "tribe" field can be any of these (case-insensitive).
-    const TRIBES = ["Shady", "Mysterious", "Eriee", "Brave", "Enma", "Charming", "Heartfull", "Tought", "Slippery"];
+    const TRIBES = ["Shady", "Mysterious", "Eerie", "Brave", "Enma", "Charming", "Heartful", "Tough", "Slippery"];
 
     // Tribe icons shown next to each tribe's unity bonus (team panel).
     // Drop an image at img/tribes/<key>.png for each tribe you want an icon
@@ -710,42 +711,36 @@
       return `img/tribes/${tribeKey}.png`;
     }
 
-    // To add a new watch, add another object to this array.
-    // id: internal value (no spaces), label: shown in the dropdown,
-    // hpPercent / atkPercent: % bonus to HP and ATK (can differ),
-    // affects: same filter format as centerSkill.affects:
-    //   {}                         -> whole team
-    //   { tribes: ["shady"] }      -> only those tribes
-    //   { ranks: ["UZ+","UZ++"] }  -> only those ranks
-    //   { genders: ["female"] }    -> only that gender
-    //   { sagas: ["Nyanbo"] }      -> only that saga
-    //   { ids: ["shadow"] }        -> only those specific characters
-    
-    
-const CLOCKS = [
-      {
-        id: "kuro-watch",
-        label: "Kuro Watch",
-        hpPercent: 15,
-        atkPercent: 15,
-        affects: { tribes: ["shady", "eriee"] }
-      },
-      {
-        id: "women-watch",
-        label: "Women Watch",
-        hpPercent: 30,
-        atkPercent: 20,
-        affects: { genders: ["female"] }
-      }
-     
-    ];
 
     function getClock(id) {
       return CLOCKS.find(c => c.id === id) || null;
     }
 
+    const hasTiers = clock => Array.isArray(clock?.tiers) && clock.tiers.length > 0;
+
+    // Bonus real del watch para el equipo actual. Si tiene "tiers", depende de
+    // cuántas unidades del equipo cumplen su filtro "affects".
+    function getClockBonus(clock) {
+      if (!clock) return { hpPercent: 0, atkPercent: 0 };
+      if (hasTiers(clock)) {
+        const count = team
+          .map(member => getCharacter(member.id))
+          .filter(c => c && characterMatchesCenterFilter(c, clock.affects)).length;
+        if (!count) return { hpPercent: 0, atkPercent: 0 };
+        const tier = clock.tiers[Math.min(count, clock.tiers.length) - 1];
+        return { hpPercent: Number(tier.hpPercent) || 0, atkPercent: Number(tier.atkPercent) || 0 };
+      }
+      return { hpPercent: Number(clock.hpPercent) || 0, atkPercent: Number(clock.atkPercent) || 0 };
+    }
+
     function describeClock(clock) {
       const who = describeCenterFilter(clock.affects);
+      if (hasTiers(clock)) {
+        const steps = clock.tiers
+          .map((t, i) => `${i + 1} unit${i ? "s" : ""}: +${t.hpPercent}% HP, +${t.atkPercent}% ATK`)
+          .join(" · ");
+        return `${clock.label} (${who}) — ${steps}.`;
+      }
       if (clock.hpPercent === clock.atkPercent) {
         return `${clock.label}: +${clock.hpPercent}% HP and ATK for ${who}.`;
       }
@@ -853,70 +848,106 @@ const CLOCKS = [
       return `Center skill: +${hpPercent}% HP, +${atkPercent}% ATK to ${who}`;
     }
 
-    // Unity: a character with a "unity" field grants a flat % HP/ATK bonus to the
-    // WHOLE team, but only activates if there are at least 2 characters of that
-    // character's own tribe in the current team (itself included). Position in
-    // the team doesn't matter (unlike centerSkill).
+    // ── Unity ──
+    // Tipos de unity que puede tener un personaje (en character.js):
+    //   unity: { percent }                                   -> todo el equipo; necesita 2+ de su tribu
+    //   unity: { hpPercent, atkPercent, condition: { saga } } -> solo unidades de esa saga; necesita 2+ de esa saga
+    //   femaleUnity: { hpPercent, atkPercent }               -> solo unidades female; necesita 2+ female
+    //   sameTeamUnity: { percent }                           -> todo el equipo; todos de la misma tribu que él
+    // Todos los unity activos se suman entre sí.
+    const norm = v => String(v ?? "").trim().toLowerCase();
+    const capitalize = v => String(v || "").trim().replace(/^./, c => c.toUpperCase());
+
+    function getTeamCharacters() {
+      return team.map(member => getCharacter(member.id)).filter(Boolean);
+    }
+
     function getTribeCounts() {
       const counts = {};
-      team.forEach(member => {
-        const character = getCharacter(member.id);
-        if (!character) return;
-        const tribe = String(character.tribe || "").trim().toLowerCase();
-        if (!tribe) return;
-        counts[tribe] = (counts[tribe] || 0) + 1;
+      getTeamCharacters().forEach(c => {
+        const tribe = norm(c.tribe);
+        if (tribe) counts[tribe] = (counts[tribe] || 0) + 1;
       });
       return counts;
     }
 
-    function isUnityActive(character, tribeCounts) {
-      if (!character?.unity) return false;
-      const tribe = String(character.tribe || "").trim().toLowerCase();
-      return (tribeCounts[tribe] || 0) >= 2;
+    function getUnities(character) {
+      const list = [];
+      if (!character) return list;
+      const tribe = norm(character.tribe);
+      const u = character.unity;
+      if (u) {
+        const saga = u.condition?.saga;
+        if (saga) {
+          list.push({ type: "saga", saga, hp: Number(u.hpPercent) || 0, atk: Number(u.atkPercent) || 0, label: u.label });
+        } else {
+          const pct = Number(u.percent) || 0;
+          list.push({ type: "tribe", tribe, hp: pct, atk: pct, label: u.label });
+        }
+      }
+      const f = character.femaleUnity;
+      if (f) list.push({ type: "female", hp: Number(f.hpPercent) || 0, atk: Number(f.atkPercent) || 0, label: f.label });
+      const st = character.sameTeamUnity;
+      if (st) {
+        const pct = Number(st.percent) || 0;
+        list.push({ type: "sameTeam", tribe, hp: pct, atk: pct, label: st.label });
+      }
+      return list;
     }
 
-    function describeUnity(character) {
-      const unity = character.unity;
-      if (unity.label) return unity.label;
-      const percent = Number(unity.percent) || 0;
-      const tribeLabel = character.tribe
-        ? String(character.tribe).trim().replace(/^./, c => c.toUpperCase())
-        : "same tribe";
-      return `Unity: +${percent}% HP/ATK to the team (needs 2+ ${tribeLabel})`;
+    function isUnityEntryActive(entry, teamChars) {
+      switch (entry.type) {
+        case "tribe":    return teamChars.filter(c => norm(c.tribe) === entry.tribe).length >= 2;
+        case "saga":     return teamChars.filter(c => norm(c.saga) === norm(entry.saga)).length >= 2;
+        case "female":   return teamChars.filter(c => norm(c.gender) === "female").length >= 2;
+        case "sameTeam": return teamChars.length >= 2 && teamChars.every(c => norm(c.tribe) === entry.tribe);
+        default:         return false;
+      }
     }
 
-    // Builds one entry per tribe present in the current team that has at
-    // least one "unity" character, summing the % from every ACTIVE unity of
-    // that tribe (several characters of the same tribe can each carry their
-    // own unity.percent, and they stack). Tribes that are present but haven't
-    // reached the 2+ threshold yet are still listed (percent 0, active:false)
-    // so the team panel can show "needs 1 more", etc.
+    function unityEntryApplies(entry, member) {
+      if (entry.type === "saga") return norm(member.saga) === norm(entry.saga);
+      if (entry.type === "female") return norm(member.gender) === "female";
+      return true;
+    }
+
+    function describeUnityEntry(entry) {
+      if (entry.label) return entry.label;
+      const pct = entry.hp === entry.atk ? `+${entry.hp}% HP/ATK` : `+${entry.hp}% HP, +${entry.atk}% ATK`;
+      switch (entry.type) {
+        case "tribe":    return `Unity: ${pct} to the team (needs 2+ ${capitalize(entry.tribe)})`;
+        case "saga":     return `${entry.saga} Unity: ${pct} to ${entry.saga} units (needs 2+ ${entry.saga} units)`;
+        case "female":   return `Female Unity: ${pct} to female units (needs 2+ female units)`;
+        case "sameTeam": return `Same Tribe Unity: ${pct} to the team (needs every unit ${capitalize(entry.tribe)})`;
+        default:         return "";
+      }
+    }
+
+    // Todas las entradas de unity activas del equipo actual.
+    function getActiveUnities() {
+      const teamChars = getTeamCharacters();
+      return teamChars.flatMap(getUnities).filter(entry => isUnityEntryActive(entry, teamChars));
+    }
+
+    // Chips del panel "Tribe unity": solo los unity de tribu (2+ de la misma tribu).
     function getTribeUnityBreakdown() {
       const tribeCounts = getTribeCounts();
       const breakdown = {};
-
-      team.forEach(member => {
-        const character = getCharacter(member.id);
-        if (!character || !character.unity) return;
-        const tribeKey = String(character.tribe || "").trim().toLowerCase();
-        if (!tribeKey) return;
-
-        if (!breakdown[tribeKey]) {
-          const tribeLabel = String(character.tribe).trim().replace(/^./, c => c.toUpperCase());
-          const count = tribeCounts[tribeKey] || 0;
-          breakdown[tribeKey] = {
-            tribeKey,
-            tribeLabel,
-            count,
-            active: count >= 2,
-            percent: 0
-          };
-        }
-        if (breakdown[tribeKey].active) {
-          breakdown[tribeKey].percent += Number(character.unity.percent) || 0;
-        }
+      getTeamCharacters().forEach(character => {
+        getUnities(character).filter(e => e.type === "tribe" && e.tribe).forEach(entry => {
+          if (!breakdown[entry.tribe]) {
+            const count = tribeCounts[entry.tribe] || 0;
+            breakdown[entry.tribe] = {
+              tribeKey: entry.tribe,
+              tribeLabel: capitalize(character.tribe),
+              count,
+              active: count >= 2,
+              percent: 0
+            };
+          }
+          if (breakdown[entry.tribe].active) breakdown[entry.tribe].percent += entry.hp;
+        });
       });
-
       return Object.values(breakdown).sort((a, b) => a.tribeLabel.localeCompare(b.tribeLabel));
     }
 
@@ -937,40 +968,6 @@ const CLOCKS = [
         : '<p class="hint">No tribe unity characters in your current team.</p>';
     }
 
-    // Female Unity: like Unity, but restricted to gender instead of tribe.
-    // A character with a "femaleUnity" field grants a flat % HP/ATK bonus
-    // ONLY to the FEMALE members of the team (not the whole team), and only
-    // activates if there are at least 2 female characters in the current
-    // team (itself included, if it is female). Unlike regular Unity,
-    // femaleUnity has separate hpPercent/atkPercent (they don't have to match).
-    function getGenderCounts() {
-      const counts = {};
-      team.forEach(member => {
-        const character = getCharacter(member.id);
-        if (!character) return;
-        const gender = String(character.gender || "").trim().toLowerCase();
-        if (!gender) return;
-        counts[gender] = (counts[gender] || 0) + 1;
-      });
-      return counts;
-    }
-
-    function isFemaleUnityActive(character, genderCounts) {
-      if (!character?.femaleUnity) return false;
-      return (genderCounts.female || 0) >= 2;
-    }
-
-    function describeFemaleUnity(character) {
-      const femaleUnity = character.femaleUnity;
-      if (femaleUnity.label) return femaleUnity.label;
-      const hpPercent = Number(femaleUnity.hpPercent) || 0;
-      const atkPercent = Number(femaleUnity.atkPercent) || 0;
-      if (hpPercent === atkPercent) {
-        return `Female Unity: +${hpPercent}% HP/ATK to female units (needs 2+ female units)`;
-      }
-      return `Female Unity: +${hpPercent}% HP, +${atkPercent}% ATK to female units (needs 2+ female units)`;
-    }
-
     function getInitials(name) {
       return name
         .split(" ")
@@ -989,8 +986,7 @@ const CLOCKS = [
 
     function renderTeam() {
       const grid = document.getElementById("teamGrid");
-      const tribeCounts = getTribeCounts();
-      const genderCounts = getGenderCounts();
+      const teamChars = getTeamCharacters();
 
       grid.innerHTML = team.length
         ? team.map((member, index) => {
@@ -1015,15 +1011,10 @@ const CLOCKS = [
               ? `<div class="center-skill-text">${escapeHtml(describeCenterSkill(char.centerSkill))}</div>`
               : "";
 
-            const unityActive = isUnityActive(char, tribeCounts);
-            const unityText = char.unity
-              ? `<div class="unity-text${unityActive ? " unity-active" : " unity-inactive"}">${escapeHtml(describeUnity(char))}${unityActive ? "" : " — not active"}</div>`
-              : "";
-
-            const femaleUnityActive = isFemaleUnityActive(char, genderCounts);
-            const femaleUnityText = char.femaleUnity
-              ? `<div class="unity-text${femaleUnityActive ? " unity-active" : " unity-inactive"}">${escapeHtml(describeFemaleUnity(char))}${femaleUnityActive ? "" : " — not active"}</div>`
-              : "";
+            const unityText = getUnities(char).map(entry => {
+              const active = isUnityEntryActive(entry, teamChars);
+              return `<div class="unity-text${active ? " unity-active" : " unity-inactive"}">${escapeHtml(describeUnityEntry(entry))}${active ? "" : " — not active"}</div>`;
+            }).join("");
 
             return `
               <div class="slot${isCenter ? " slot-center" : ""}" data-slot="${index}" data-character-id="${escapeHtml(char.id)}" draggable="true">
@@ -1041,7 +1032,6 @@ const CLOCKS = [
                 </div>
                 ${centerSkillText}
                 ${unityText}
-                ${femaleUnityText}
               </div>`;
           }).join("")
         : '<div class="hint team-empty-hint">Drag a character here from the collection.</div>';
@@ -1050,46 +1040,28 @@ const CLOCKS = [
     function calculateTeamStats() {
       const selectedClock = document.getElementById("clockSelect")?.value || "";
       const clock = getClock(selectedClock);
+      const clockBonus = getClockBonus(clock);
       const centerSkill = getCenterSkill();
 
-      const tribeCounts = getTribeCounts();
-      let unityPercent = 0;
-      team.forEach(member => {
-        const character = getCharacter(member.id);
-        if (character && isUnityActive(character, tribeCounts)) {
-          unityPercent += Number(character.unity.percent) || 0;
-        }
-      });
-
-      // Female Unity bonus: summed separately for HP/ATK (they can differ),
-      // and only ever applied to female team members below — never the whole team.
-      const genderCounts = getGenderCounts();
-      let femaleUnityHpPercent = 0;
-      let femaleUnityAtkPercent = 0;
-      team.forEach(member => {
-        const character = getCharacter(member.id);
-        if (character && isFemaleUnityActive(character, genderCounts)) {
-          femaleUnityHpPercent += Number(character.femaleUnity.hpPercent) || 0;
-          femaleUnityAtkPercent += Number(character.femaleUnity.atkPercent) || 0;
-        }
-      });
+      const activeUnities = getActiveUnities();
 
       return team.reduce((total, member) => {
         const character = getCharacter(member.id);
         const stats = getStats(character, getDupes(member));
 
-        let hpPercent = unityPercent;
-        let atkPercent = unityPercent;
+        let hpPercent = 0;
+        let atkPercent = 0;
 
-        const isFemale = String(character.gender || "").trim().toLowerCase() === "female";
-        if (isFemale) {
-          hpPercent += femaleUnityHpPercent;
-          atkPercent += femaleUnityAtkPercent;
-        }
+        activeUnities.forEach(entry => {
+          if (unityEntryApplies(entry, character)) {
+            hpPercent += entry.hp;
+            atkPercent += entry.atk;
+          }
+        });
 
         if (clock && characterMatchesCenterFilter(character, clock.affects)) {
-          hpPercent += Number(clock.hpPercent) || 0;
-          atkPercent += Number(clock.atkPercent) || 0;
+          hpPercent += clockBonus.hpPercent;
+          atkPercent += clockBonus.atkPercent;
         }
 
         if (centerSkill && characterMatchesCenterFilter(character, centerSkill.affects)) {
@@ -1243,14 +1215,15 @@ const CLOCKS = [
 (function(){
   function updateBonuses(){
     const clock = getClock(document.getElementById('clockSelect')?.value || '');
+    const bonus = getClockBonus(clock);
     const out = document.getElementById('bonusSummary');
     if (out) {
       out.textContent = clock
-        ? `Total bonus: +${clock.hpPercent}% HP, +${clock.atkPercent}% ATK`
+        ? `Total bonus: +${bonus.hpPercent}% HP, +${bonus.atkPercent}% ATK`
         : 'Total bonus: 0%';
     }
-    window.teamBonusHpPercent = clock ? clock.hpPercent : 0;
-    window.teamBonusAtkPercent = clock ? clock.atkPercent : 0;
+    window.teamBonusHpPercent = bonus.hpPercent;
+    window.teamBonusAtkPercent = bonus.atkPercent;
   }
 
   const clockSelect = document.getElementById('clockSelect');
@@ -1261,9 +1234,10 @@ const CLOCKS = [
       const opt = document.createElement('option');
       opt.value = clock.id;
       const who = describeCenterFilter(clock.affects);
+      const upTo = hasTiers(clock) ? "up to " : "";
       const percentText = clock.hpPercent === clock.atkPercent
-        ? `+${clock.hpPercent}% HP and ATK`
-        : `+${clock.hpPercent}% HP, +${clock.atkPercent}% ATK`;
+        ? `${upTo}+${clock.hpPercent}% HP and ATK`
+        : `${upTo}+${clock.hpPercent}% HP, +${clock.atkPercent}% ATK`;
       opt.textContent = `${clock.label} (${percentText} for ${who})`;
       clockSelect.appendChild(opt);
     });
