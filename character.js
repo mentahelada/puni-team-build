@@ -23,7 +23,7 @@ const characters = [
   {
     id: "u-robonyan-ma",
     name: "U robonyan MA",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "100 Tales",
     rank: "UZ++",
@@ -35,13 +35,13 @@ const characters = [
     centerSkill: {
       hpPercent: 7,
       atkPercent: 7,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
     id: "kirito",
     name: "Kirito",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "Sword Art Online",
     rank: "UZ++",
@@ -53,7 +53,7 @@ const characters = [
     centerSkill: {
       hpPercent: 7,
       atkPercent: 7,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     },
     unity: {
       percent: 28
@@ -143,7 +143,7 @@ const characters = [
   {
     id: "yotsuba-summer-memory",
     name: "Yotsuba Summer Memory",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "The Quintessential Quintuplets",
     rank: "UZ++",
@@ -155,7 +155,7 @@ const characters = [
     centerSkill: {
       hpPercent: 7,
       atkPercent: 7,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     },
     unity: {
       percent: 28
@@ -164,7 +164,7 @@ const characters = [
   {
     id: "nino-summer-memory",
     name: "Nino Summer Memory",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "female",
     saga: "The Quintessential Quintuplets",
     rank: "UZ++",
@@ -176,7 +176,7 @@ const characters = [
     centerSkill: {
       hpPercent: 7,
       atkPercent: 7,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     },
     unity: {
       percent: 28
@@ -320,7 +320,7 @@ const characters = [
   {
     id: "nino-happy-valentine",
     name: "Nino Happy Valentine",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "female",
     saga: "The Quintessential Quintuplets",
     rank: "UZ+",
@@ -356,7 +356,7 @@ const characters = [
   {
     id: "yotsuba-happy-valentine",
     name: "Yotsuba Happy Valentine",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "The Quintessential Quintuplets",
     rank: "UZ+",
@@ -392,7 +392,7 @@ const characters = [
   {
     id: "meteorite-asu",
     name: "Meteorite Asu",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "male",
     saga: "Galaxy Watch",
     rank: "UZ+",
@@ -404,13 +404,13 @@ const characters = [
     centerSkill: {
       hpPercent: 4,
       atkPercent: 6,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     }
   },
   {
     id: "neko-elzemekia",
     name: "Neko Elzemekia",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "Nyanbo",
     rank: "UZ+",
@@ -422,7 +422,7 @@ const characters = [
     centerSkill: {
       hpPercent: 5,
       atkPercent: 5,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     },
     unity: {
       percent: 26
@@ -431,7 +431,7 @@ const characters = [
   {
     id: "usada-pekora",
     name: "Usada Pekora",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "Hololive",
     rank: "UZ+",
@@ -578,7 +578,7 @@ const characters = [
   {
     id: "yokaiju",
     name: "Yokaiju",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "Youma",
     rank: "UZ+",
@@ -590,7 +590,7 @@ const characters = [
     centerSkill: {
       hpPercent: 7,
       atkPercent: 3,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -614,7 +614,7 @@ const characters = [
   {
     id: "supernova-asu",
     name: "Supernova Asu",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "male",
     saga: "Galaxy Watch",
     rank: "UZ+",
@@ -626,7 +626,7 @@ const characters = [
     centerSkill: {
       hpPercent: 7,
       atkPercent: 3,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     }
   },
   {
@@ -650,7 +650,7 @@ const characters = [
   {
     id: "12-super-gods-jibanyan",
     name: "12 Super Gods Jibanyan",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "12 anniversary",
     rank: "UZ+",
@@ -662,7 +662,7 @@ const characters = [
     centerSkill: {
       hpPercent: 8,
       atkPercent: 2,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     },
     unity: {
       percent: 26
@@ -671,7 +671,7 @@ const characters = [
   {
     id: "young-bourgeoisG",
     name: "Young BourgeoisG",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "male",
     saga: "100 Tales",
     rank: "UZ+",
@@ -689,7 +689,7 @@ const characters = [
   {
     id: "headasteam",
     name: "Headasteam",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "male",
     saga: "Youma",
     rank: "UZ+",
@@ -701,15 +701,15 @@ const characters = [
     centerSkill: {
       hpPercent: 3,
       atkPercent: 7,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     }
   },
   {
     id: "master-roxy",
     name: "Master Roxy",
     tribe: "Slippery",
-    gender: "",
-    saga: "",
+    gender: "female",
+    saga: "Mushoku Tensei",
     rank: "UZ+",
     hp0: 1630,
     hp10: 1956,
@@ -751,9 +751,9 @@ const characters = [
     saga: "Nyanbo",
     rank: "UZ+",
     hp0: 1756,
-    hp10: 1862,
+    hp10: 2107,
     atk0: 1641,
-    atk10: 1740,
+    atk10: 1969,
     image: "img/Damededtime.png",
     centerSkill: {
       hpPercent: 7,
@@ -767,7 +767,7 @@ const characters = [
   {
     id: "demon-lord-rimuru",
     name: "Demon Lord Rimuru",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "male",
     saga: "Tensura",
     rank: "UZ+",
@@ -779,7 +779,7 @@ const characters = [
     centerSkill: {
       hpPercent: 5,
       atkPercent: 5,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     },
     unity: {
       percent: 26
@@ -806,7 +806,7 @@ const characters = [
   {
     id: "retinado",
     name: "Retinado",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "male",
     saga: "Youma",
     rank: "UZ+",
@@ -818,7 +818,7 @@ const characters = [
     centerSkill: {
       hpPercent: 3,
       atkPercent: 7,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     }
   },
   {
@@ -851,9 +851,9 @@ const characters = [
     saga: "Hololive",
     rank: "UZ+",
     hp0: 1628,
-    hp10: 1628,
+    hp10: 1954,
     atk0: 1648,
-    atk10: 1648,
+    atk10: 1978,
     image: "img/Halloweenmarine.png",
     centerSkill: {
       hpPercent: 5,
@@ -872,9 +872,9 @@ const characters = [
     saga: "Nyanbo",
     rank: "UZ+",
     hp0: 1697,
-    hp10: 1697,
+    hp10: 2036,
     atk0: 1700,
-    atk10: 1700,
+    atk10: 2040,
     image: "img/Punipunikatie.png",
     centerSkill: {
       hpPercent: 5,
@@ -890,9 +890,9 @@ const characters = [
     saga: "10th puni anniversary",
     rank: "UZ+",
     hp0: 1660,
-    hp10: 1660,
+    hp10: 1992,
     atk0: 1670,
-    atk10: 1670,
+    atk10: 2004,
     image: "img/Kingjibanyan.png",
     centerSkill: {
       hpPercent: 1,
@@ -911,9 +911,9 @@ const characters = [
     saga: "10th puni anniversary",
     rank: "UZ+",
     hp0: 1670,
-    hp10: 1670,
+    hp10: 2004,
     atk0: 1660,
-    atk10: 1660,
+    atk10: 1992,
     image: "img/Paradeenma.png",
     centerSkill: {
       hpPercent: 5,
@@ -929,9 +929,9 @@ const characters = [
     saga: "10th puni anniversary",
     rank: "UZ+",
     hp0: 1680,
-    hp10: 1680,
+    hp10: 2016,
     atk0: 1716,
-    atk10: 1716,
+    atk10: 2059,
     image: "img/Kingkomasan.png",
     centerSkill: {
       hpPercent: 5,
@@ -968,9 +968,9 @@ const characters = [
     saga: "Youma",
     rank: "UZ+",
     hp0: 1831,
-    hp10: 1831,
+    hp10: 2197,
     atk0: 1749,
-    atk10: 1749,
+    atk10: 2099,
     image: "img/zazel(tentacles).png",
     centerSkill: {
       hpPercent: 9,
@@ -986,9 +986,9 @@ const characters = [
     saga: "Frieren Beyond Journeys End",
     rank: "UZ+",
     hp0: 1672,
-    hp10: 1672,
+    hp10: 2006,
     atk0: 1658,
-    atk10: 1658,
+    atk10: 1990,
     image: "img/Frieren.png",
     centerSkill: {
       hpPercent: 7,
@@ -1020,19 +1020,19 @@ const characters = [
   {
     id: "super-puni-king",
     name: "Super Puni King",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "10th puni anniversary",
     rank: "UZ+",
     hp0: 1650,
-    hp10: 1650,
+    hp10: 1980,
     atk0: 1680,
-    atk10: 1680,
+    atk10: 2016,
     image: "img/Superpuniking.png",
     centerSkill: {
       hpPercent: 6,
       atkPercent: 4,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     },
     unity: {
       percent: 26
@@ -1085,9 +1085,9 @@ const characters = [
     saga: "Inazuma Eleven",
     rank: "UZ+",
     hp0: 1697,
-    hp10: null,
+    hp10: 2036,
     atk0: 1633,
-    atk10: null,
+    atk10: 1960,
     image: "img/Destinbillows.png",
     centerSkill: {
       hpPercent: 14,
@@ -1098,19 +1098,19 @@ const characters = [
   {
     id: "harper-evans",
     name: "Harper Evans",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "Inazuma Eleven",
     rank: "UZ+",
     hp0: 1707,
-    hp10: null,
+    hp10: 2048,
     atk0: 1688,
-    atk10: null,
+    atk10: 2026,
     image: "img/Harperevans.png",
     centerSkill: {
       hpPercent: 5,
       atkPercent: 5,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -1121,9 +1121,9 @@ const characters = [
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1665,
-    hp10: null,
+    hp10: 1998,
     atk0: 1665,
-    atk10: null,
+    atk10: 1998,
     image: "img/Merashishino(3rdoutfit).png",
     centerSkill: {
       hpPercent: 2,
@@ -1139,14 +1139,14 @@ const characters = [
   {
     id: "ashuramii",
     name: "AshuRamii",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "female",
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1652,
-    hp10: null,
+    hp10: 1982,
     atk0: 1678,
-    atk10: null,
+    atk10: 2014,
     image: "img/Ashuramii.png",
     centerSkill: {
       hpPercent: 1,
@@ -1157,19 +1157,19 @@ const characters = [
   {
     id: "massiface",
     name: "Massiface",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "Youma",
     rank: "UZ+",
     hp0: 1863,
-    hp10: null,
+    hp10: 2236,
     atk0: 1717,
-    atk10: null,
+    atk10: 2060,
     image: "img/Massiface.png",
     centerSkill: {
       hpPercent: 4,
       atkPercent: 6,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -1180,9 +1180,9 @@ const characters = [
     saga: "Code Geass",
     rank: "UZ+",
     hp0: 1692,
-    hp10: null,
+    hp10: 2030,
     atk0: 1638,
-    atk10: null,
+    atk10: 1966,
     image: "img/Lelouch.png",
     centerSkill: {
       hpPercent: 3,
@@ -1198,9 +1198,9 @@ const characters = [
     saga: "Code Geass",
     rank: "UZ+",
     hp0: 1669,
-    hp10: null,
+    hp10: 2003,
     atk0: 1661,
-    atk10: null,
+    atk10: 1993,
     image: "img/Suzaku.png",
     centerSkill: {
       hpPercent: 6,
@@ -1214,19 +1214,19 @@ const characters = [
   {
     id: "valentine-mika",
     name: "Valentine Mika",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "Nyanbo",
     rank: "UZ+",
     hp0: 1730,
-    hp10: null,
+    hp10: 2076,
     atk0: 1667,
-    atk10: null,
+    atk10: 2000,
     image: "img/Valentinemika.png",
     centerSkill: {
       hpPercent: 4,
       atkPercent: 6,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     },
     unity: {
       percent: 26
@@ -1240,9 +1240,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1663,
-    hp10: null,
+    hp10: 1996,
     atk0: 1667,
-    atk10: null,
+    atk10: 2000,
     image: "img/Valentineorochi.png",
     centerSkill: {
       hpPercent: 6,
@@ -1258,19 +1258,19 @@ const characters = [
   {
     id: "ukoi-tanone",
     name: "Ukoi Tanone",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "female",
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1648,
-    hp10: null,
+    hp10: 1978,
     atk0: 1682,
-    atk10: null,
+    atk10: 2018,
     image: "img/ukoitanone.png",
     centerSkill: {
       hpPercent: 6,
       atkPercent: 4,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     }
   },
   {
@@ -1281,9 +1281,9 @@ const characters = [
     saga: "Bloody Popularity Poll",
     rank: "UZ+",
     hp0: 1643,
-    hp10: null,
+    hp10: 1972,
     atk0: 1687,
-    atk10: null,
+    atk10: 2024,
     image: "img/Greatbloodyprixmika.png",
     centerSkill: {
       hpPercent: 7,
@@ -1321,9 +1321,9 @@ const characters = [
     saga: "Color Legend",
     rank: "UZ+",
     hp0: 1939,
-    hp10: null,
+    hp10: 2327,
     atk0: 1641,
-    atk10: null,
+    atk10: 1969,
     image: "img/yohkokomashura.png",
     centerSkill: {
       hpPercent: 5,
@@ -1342,9 +1342,9 @@ const characters = [
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1591,
-    hp10: null,
+    hp10: 1909,
     atk0: 1739,
-    atk10: null,
+    atk10: 2087,
     image: "img/Merashishino(4thoutfit).png",
     centerSkill: {
       hpPercent: 4,
@@ -1365,9 +1365,9 @@ const characters = [
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1652,
-    hp10: null,
+    hp10: 1982,
     atk0: 1678,
-    atk10: null,
+    atk10: 2014,
     image: "img/Genbunorika.png",
     centerSkill: {
       hpPercent: 7,
@@ -1378,19 +1378,19 @@ const characters = [
   {
     id: "agent-x",
     name: "Agent X",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "male",
     saga: "Youma",
     rank: "UZ+",
     hp0: 1817,
-    hp10: null,
+    hp10: 2180,
     atk0: 1763,
-    atk10: null,
+    atk10: 2116,
     image: "img/Agentx.png",
     centerSkill: {
       hpPercent: 4,
       atkPercent: 8,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     }
   },
   {
@@ -1401,9 +1401,9 @@ const characters = [
     saga: "Hololive",
     rank: "UZ+",
     hp0: 1567,
-    hp10: null,
+    hp10: 1880,
     atk0: 1763,
-    atk10: null,
+    atk10: 2116,
     image: "img/Nekomataokayu(school).png",
     centerSkill: {
       hpPercent: 8,
@@ -1419,19 +1419,19 @@ const characters = [
   {
     id: "houshou-marine-(school)",
     name: "Houshou Marine (school)",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "female",
     saga: "Hololive",
     rank: "UZ+",
     hp0: 1648,
-    hp10: null,
+    hp10: 1978,
     atk0: 1682,
-    atk10: null,
+    atk10: 2018,
     image: "img/Houshoumarine(school).png",
     centerSkill: {
       hpPercent: 6,
       atkPercent: 6,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     }
   },
   {
@@ -1442,9 +1442,9 @@ const characters = [
     saga: "Hololive",
     rank: "UZ+",
     hp0: 1631,
-    hp10: null,
+    hp10: 1957,
     atk0: 1699,
-    atk10: null,
+    atk10: 2039,
     image: "img/Tsunomakiwatame(school).png",
     centerSkill: {
       hpPercent: 5,
@@ -1460,9 +1460,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1632,
-    hp10: null,
+    hp10: 1958,
     atk0: 1698,
-    atk10: null,
+    atk10: 2038,
     image: "img/Jpowertransform.png",
     centerSkill: {
       hpPercent: 12,
@@ -1478,9 +1478,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1680,
-    hp10: null,
+    hp10: 2016,
     atk0: 1650,
-    atk10: null,
+    atk10: 1980,
     image: "img/Nyanjpt.png",
     centerSkill: {
       hpPercent: 10,
@@ -1499,9 +1499,9 @@ const characters = [
     saga: "Color Legend",
     rank: "UZ+",
     hp0: 1892,
-    hp10: null,
+    hp10: 2270,
     atk0: 1688,
-    atk10: null,
+    atk10: 2026,
     image: "img/Redflashboushinyan.png",
     centerSkill: {
       hpPercent: 5,
@@ -1520,9 +1520,9 @@ const characters = [
     saga: "Gambler Coin",
     rank: "UZ+",
     hp0: 1815,
-    hp10: null,
+    hp10: 2178,
     atk0: 1515,
-    atk10: null,
+    atk10: 1818,
     image: "img/Chansin.png",
     centerSkill: {
       hpPercent: 11,
@@ -1538,9 +1538,9 @@ const characters = [
     saga: "Gambler Coin",
     rank: "UZ+",
     hp0: 1602,
-    hp10: null,
+    hp10: 1922,
     atk0: 1795,
-    atk10: null,
+    atk10: 2154,
     image: "img/Victorylastgirakoma.png",
     centerSkill: {
       hpPercent: 1,
@@ -1554,19 +1554,19 @@ const characters = [
   {
     id: "armed-mecha-orochi",
     name: "Armed Mecha Orochi",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1659,
-    hp10: null,
+    hp10: 1991,
     atk0: 1671,
-    atk10: null,
+    atk10: 2005,
     image: "img/Armedmechaorochi.png",
     centerSkill: {
       hpPercent: 7,
       atkPercent: 5,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -1577,9 +1577,9 @@ const characters = [
     saga: "Nyanbo",
     rank: "UZ+",
     hp0: 1728,
-    hp10: null,
+    hp10: 2074,
     atk0: 1699,
-    atk10: null,
+    atk10: 2039,
     image: "img/blackgolddianyan.png",
     centerSkill: {
       hpPercent: 4,
@@ -1616,9 +1616,9 @@ const characters = [
     saga: "The Eminence in Shadow",
     rank: "UZ+",
     hp0: 1679,
-    hp10: null,
+    hp10: 2015,
     atk0: 1651,
-    atk10: null,
+    atk10: 1981,
     image: "img/Alpha.png",
     centerSkill: {
       hpPercent: 6,
@@ -1634,9 +1634,9 @@ const characters = [
     saga: "The Eminence in Shadow",
     rank: "UZ+",
     hp0: 1648,
-    hp10: null,
+    hp10: 1978,
     atk0: 1682,
-    atk10: null,
+    atk10: 2018,
     image: "img/Beta.png",
     centerSkill: {
       hpPercent: 6,
@@ -1650,19 +1650,19 @@ const characters = [
   {
     id: "delta",
     name: "Delta",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "female",
     saga: "The Eminence in Shadow",
     rank: "UZ+",
     hp0: 1679,
-    hp10: null,
+    hp10: 2015,
     atk0: 1651,
-    atk10: null,
+    atk10: 1981,
     image: "img/Delta.png",
     centerSkill: {
       hpPercent: 6,
       atkPercent: 6,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -1673,9 +1673,9 @@ const characters = [
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1656,
-    hp10: null,
+    hp10: 1987,
     atk0: 1674,
-    atk10: null,
+    atk10: 2009,
     image: "img/Merashishino(finaloutfit).png",
     centerSkill: {
       hpPercent: 6,
@@ -1686,19 +1686,19 @@ const characters = [
   {
     id: "kessoku-inori",
     name: "Kessoku Inori",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "Medalist",
     rank: "UZ+",
     hp0: 1675,
-    hp10: null,
+    hp10: 2010,
     atk0: 1655,
-    atk10: null,
+    atk10: 1986,
     image: "img/Kessokuinori.png",
     centerSkill: {
       hpPercent: 2,
       atkPercent: 10,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     },
     unity: {
       percent: 26
@@ -1712,9 +1712,9 @@ const characters = [
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1628,
-    hp10: null,
+    hp10: 1954,
     atk0: 1702,
-    atk10: null,
+    atk10: 2042,
     image: "img/Fudououka.png",
     centerSkill: {
       hpPercent: 8,
@@ -1733,9 +1733,9 @@ const characters = [
     saga: "Color Legend",
     rank: "UZ+",
     hp0: 1906,
-    hp10: null,
+    hp10: 2287,
     atk0: 1674,
-    atk10: null,
+    atk10: 2009,
     image: "img/Azurestormslurpent.png",
     centerSkill: {
       hpPercent: 6,
@@ -1749,14 +1749,14 @@ const characters = [
   {
     id: "todoroki-reona-(shine-outfit)",
     name: "Todoroki Reona (Shine Outfit)",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "female",
     saga: "Idol Royale",
     rank: "UZ+",
     hp0: 1676,
-    hp10: null,
+    hp10: 2011,
     atk0: 1654,
-    atk10: null,
+    atk10: 1985,
     image: "img/Todorokireona(shineoutfit).png",
     centerSkill: {
       hpPercent: 3,
@@ -1767,19 +1767,19 @@ const characters = [
   {
     id: "junkernaut",
     name: "Junkernaut",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "Youma",
     rank: "UZ+",
     hp0: 1828,
-    hp10: null,
+    hp10: 2194,
     atk0: 1752,
-    atk10: null,
+    atk10: 2102,
     image: "img/Junkernaut.png",
     centerSkill: {
       hpPercent: 5,
       atkPercent: 7,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     },
     unity: {
       percent: 26
@@ -1788,19 +1788,19 @@ const characters = [
   {
     id: "wedding-emilia",
     name: "Wedding Emilia",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "Re:Zero",
     rank: "UZ+",
     hp0: 1576,
-    hp10: null,
+    hp10: 1891,
     atk0: 1754,
-    atk10: null,
+    atk10: 2105,
     image: "img/Weddingemilia.png",
     centerSkill: {
       hpPercent: 7,
       atkPercent: 5,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     },
     unity: {
       percent: 26
@@ -1809,19 +1809,19 @@ const characters = [
   {
     id: "wedding-rem",
     name: "Wedding Rem",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "female",
     saga: "Re:Zero",
     rank: "UZ+",
     hp0: 1673,
-    hp10: null,
+    hp10: 2008,
     atk0: 1657,
-    atk10: null,
+    atk10: 1988,
     image: "img/Weddingrem.png",
     centerSkill: {
       hpPercent: 4,
       atkPercent: 8,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -1832,9 +1832,9 @@ const characters = [
     saga: "Re:Zero",
     rank: "UZ+",
     hp0: 1672,
-    hp10: null,
+    hp10: 2006,
     atk0: 1658,
-    atk10: null,
+    atk10: 1990,
     image: "img/Weddingbeatrice.png",
     centerSkill: {
       hpPercent: 7,
@@ -1845,37 +1845,37 @@ const characters = [
   {
     id: "super-awakened-emilia",
     name: "Super Awakened Emilia",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "female",
     saga: "Re:Zero",
     rank: "UZ+",
     hp0: 1672,
-    hp10: null,
+    hp10: 2006,
     atk0: 1658,
-    atk10: null,
-    image: "img/Superawekenedemilia.png",
+    atk10: 1990,
+    image: "img/Superawakenedemilia.png",
     centerSkill: {
       hpPercent: 6,
       atkPercent: 4,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     }
   },
   {
     id: "super-awakened-rem",
     name: "Super Awakened Rem",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "female",
     saga: "Re:Zero",
     rank: "UZ+",
     hp0: 1618,
-    hp10: null,
+    hp10: 1942,
     atk0: 1712,
-    atk10: null,
+    atk10: 2054,
     image: "img/Superawakenedrem.png",
     centerSkill: {
       hpPercent: 3,
       atkPercent: 7,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
@@ -1886,9 +1886,9 @@ const characters = [
     saga: "Re:Zero",
     rank: "UZ+",
     hp0: 1672,
-    hp10: null,
+    hp10: 2006,
     atk0: 1658,
-    atk10: null,
+    atk10: 1990,
     image: "img/Superawakenedbeatrice.png",
     centerSkill: {
       hpPercent: 5,
@@ -1898,33 +1898,33 @@ const characters = [
   },
   {
     id: "heaven-olight",
-    name: "Heaven O´Light",
-    tribe: "Heartfull",
+    name: "Heaven O'Light",
+    tribe: "Heartful",
     gender: "male",
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1687,
-    hp10: null,
+    hp10: 2024,
     atk0: 1643,
-    atk10: null,
+    atk10: 1972,
     image: "img/Heavenolight.png",
     centerSkill: {
       hpPercent: 7,
       atkPercent: 10,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     }
   },
   {
     id: "blood-rain-hareonna-(shadow)",
     name: "Blood Rain Hareonna (Shadow)",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "female",
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1699,
-    hp10: null,
+    hp10: 2039,
     atk0: 1631,
-    atk10: null,
+    atk10: 1957,
     image: "img/Bloodrainhareonna.png",
     centerSkill: {
       hpPercent: 11,
@@ -1935,19 +1935,19 @@ const characters = [
   {
     id: "green-tree-elderbloom",
     name: "Green Tree Elderbloom",
-    tribe: "Heartfull",
+    tribe: "Heartful",
     gender: "male",
     saga: "Color Legend",
     rank: "UZ+",
     hp0: 1925,
-    hp10: null,
+    hp10: 2310,
     atk0: 1655,
-    atk10: null,
+    atk10: 1986,
     image: "img/Greentreeelderbloom.png",
     centerSkill: {
       hpPercent: 5,
       atkPercent: 10,
-      affects: { tribes: ["Heartfull"] }
+      affects: { tribes: ["Heartful"] }
     },
     sameTeamUnity: {
       percent: 32
@@ -1961,9 +1961,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1656,
-    hp10: null,
+    hp10: 1987,
     atk0: 1674,
-    atk10: null,
+    atk10: 2009,
     image: "img/Hareonna.png",
     centerSkill: {
       hpPercent: 7,
@@ -1979,9 +1979,9 @@ const characters = [
     saga: "Nyanbo",
     rank: "UZ+",
     hp0: 1734,
-    hp10: null,
+    hp10: 2081,
     atk0: 1663,
-    atk10: null,
+    atk10: 1996,
     image: "img/Hibariakane(hydrangeaoutfit).png",
     centerSkill: {
       hpPercent: 6,
@@ -2000,9 +2000,9 @@ const characters = [
     saga: "13 anniversary",
     rank: "UZ+",
     hp0: 1562,
-    hp10: null,
+    hp10: 1874,
     atk0: 1768,
-    atk10: null,
+    atk10: 2122,
     image: "img/Warriororochi.png",
     centerSkill: {
       hpPercent: 5,
@@ -2013,19 +2013,19 @@ const characters = [
   {
     id: "demon-lord-kuubou",
     name: "Demon Lord Kuubou",
-    tribe: "Eriee",
+    tribe: "Eerie",
     gender: "male",
     saga: "13 anniversary",
     rank: "UZ+",
     hp0: 1632,
-    hp10: null,
+    hp10: 1958,
     atk0: 1698,
-    atk10: null,
+    atk10: 2038,
     image: "img/demonlordkuubou.png",
     centerSkill: {
       hpPercent: 7,
       atkPercent: 5,
-      affects: { tribes: ["Eriee"] }
+      affects: { tribes: ["Eerie"] }
     }
   },
   {
@@ -2036,9 +2036,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1689,
-    hp10: null,
+    hp10: 2027,
     atk0: 1641,
-    atk10: null,
+    atk10: 1969,
     image: "img/Horsegirlbunnymint.png",
     centerSkill: {
       hpPercent: 5,
@@ -2054,9 +2054,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1645,
-    hp10: null,
+    hp10: 1974,
     atk0: 1685,
-    atk10: null,
+    atk10: 2022,
     image: "img/Huntingoutfitotohime.png",
     centerSkill: {
       hpPercent: 8,
@@ -2072,9 +2072,9 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1606,
-    hp10: null,
+    hp10: 1927,
     atk0: 1724,
-    atk10: null,
+    atk10: 2069,
     image: "img/Horsegirljaen.png",
     centerSkill: {
       hpPercent: 6,
@@ -2085,32 +2085,32 @@ const characters = [
   {
     id: "asuna",
     name: "Asuna",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "female",
     saga: "Sword Art Online",
     rank: "UZ+",
     hp0: 1635,
-    hp10: null,
+    hp10: 1962,
     atk0: 1695,
-    atk10: null,
+    atk10: 2034,
     image: "img/Asuna.png",
     centerSkill: {
       hpPercent: 3,
       atkPercent: 9,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     }
   },
   {
     id: "sinnon",
-    name: "Sinnon",
+    name: "Sinon",
     tribe: "Mysterious",
     gender: "female",
     saga: "Sword Art Online",
     rank: "UZ+",
     hp0: 1627,
-    hp10: null,
+    hp10: 1952,
     atk0: 1703,
-    atk10: null,
+    atk10: 2044,
     image: "img/Sinnon.png",
     centerSkill: {
       hpPercent: 9,
@@ -2121,19 +2121,19 @@ const characters = [
   {
     id: "limit-broken-sighborg-y",
     name: "Limit Broken Sighborg Y",
-    tribe: "Tought",
+    tribe: "Tough",
     gender: "male",
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1680,
-    hp10: null,
+    hp10: 2016,
     atk0: 1650,
-    atk10: null,
+    atk10: 1980,
     image: "img/Sighborgy.png",
     centerSkill: {
       hpPercent: 13,
       atkPercent: 4,
-      affects: { tribes: ["Tought"] }
+      affects: { tribes: ["Tough"] }
     },
     unity: {
       percent: 26
@@ -2147,14 +2147,214 @@ const characters = [
     saga: "100 Tales",
     rank: "UZ+",
     hp0: 1697,
-    hp10: null,
+    hp10: 2036,
     atk0: 1633,
-    atk10: null,
+    atk10: 1960,
     image: "img/Summervacationblizzaria.png",
     centerSkill: {
       hpPercent: 9,
       atkPercent: 3,
       affects: { tribes: ["Charming"] }
+    }
+  },
+  {
+    id: "ichika-swimsuit",
+    name: "Ichika Swimsuit",
+    tribe: "Mysterious",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1654,
+    hp10: 1985,
+    atk0: 1676,
+    atk10: 2011,
+    image: "img/Ichikaswimsuit.png",
+    centerSkill: {
+      hpPercent: 7,
+      atkPercent: 15,
+      affects: { sagas: ["The Quintessential Quintuplets"] }
+    },
+    femaleUnity: {
+      hpPercent: 24,
+      atkPercent: 18
+    }
+  },
+  {
+    id: "nino-swimsuit",
+    name: "Nino Swimsuit",
+    tribe: "Eerie",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1554,
+    hp10: 1865,
+    atk0: 1776,
+    atk10: 2131,
+    image: "img/Ninoswimsuit.png",
+    centerSkill: {
+      hpPercent: 7,
+      atkPercent: 15,
+      affects: { sagas: ["The Quintessential Quintuplets"] }
+    },
+    femaleUnity: {
+      hpPercent: 24,
+      atkPercent: 18
+    }
+  },
+  {
+    id: "miku-swimsuit",
+    name: "Miku Swimsuit",
+    tribe: "Shady",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1637,
+    hp10: 1964,
+    atk0: 1693,
+    atk10: 2032,
+    image: "img/Mikuswimsuit.png",
+    centerSkill: {
+      hpPercent: 5,
+      atkPercent: 15,
+      affects: { sagas: ["The Quintessential Quintuplets"] }
+    },
+    femaleUnity: {
+      hpPercent: 24,
+      atkPercent: 18
+    }
+  },
+  {
+    id: "yotsuba-swimsuit",
+    name: "Yotsuba Swimsuit",
+    tribe: "Heartful",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1655,
+    hp10: 1986,
+    atk0: 1675,
+    atk10: 2010,
+    image: "img/Yotsubaswimsuit.png",
+    centerSkill: {
+      hpPercent: 7,
+      atkPercent: 15,
+      affects: { sagas: ["The Quintessential Quintuplets"] }
+    },
+    femaleUnity: {
+      hpPercent: 24,
+      atkPercent: 18
+    }
+  },
+  {
+    id: "itsuki-swimsuit",
+    name: "Itsuki Swimsuit",
+    tribe: "Brave",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1662,
+    hp10: 1994,
+    atk0: 1668,
+    atk10: 2002,
+    image: "img/Itsukiswimsuit.png",
+    centerSkill: {
+      hpPercent: 7,
+      atkPercent: 15,
+      affects: { sagas: ["The Quintessential Quintuplets"] }
+    },
+    femaleUnity: {
+      hpPercent: 24,
+      atkPercent: 18
+    }
+  },
+  {
+    id: "super-awakened-ichika-happy-wedding",
+    name: "Super Awakened Ichika Happy Wedding",
+    tribe: "Mysterious",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1602,
+    hp10: 1922,
+    atk0: 1728,
+    atk10: 2074,
+    image: "img/Superawakenedichikahappywedding.png",
+    centerSkill: {
+      hpPercent: 5,
+      atkPercent: 5,
+      affects: { tribes: ["Mysterious"] }
+    }
+  },
+  {
+    id: "super-awakened-nino-happy-wedding",
+    name: "Super Awakened Nino Happy Wedding",
+    tribe: "Eerie",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1702,
+    hp10: 2042,
+    atk0: 1628,
+    atk10: 1954,
+    image: "img/Superawakenedninohappywedding.png",
+    centerSkill: {
+      hpPercent: 5,
+      atkPercent: 5,
+      affects: { tribes: ["Eerie"] }
+    }
+  },
+  {
+    id: "super-awakened-miku-happy-wedding",
+    name: "Super Awakened Miku Happy Wedding",
+    tribe: "Shady",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1704,
+    hp10: 2045,
+    atk0: 1626,
+    atk10: 1951,
+    image: "img/Superawakenedmikuhappywedding.png",
+    centerSkill: {
+      hpPercent: 5,
+      atkPercent: 5,
+      affects: { tribes: ["Shady"] }
+    }
+  },
+  {
+    id: "super-awakened-yotsuba-happy-wedding",
+    name: "Super Awakened Yotsuba Happy Wedding",
+    tribe: "Heartful",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1661,
+    hp10: 1993,
+    atk0: 1669,
+    atk10: 2003,
+    image: "img/Superawakenedyotsubahappywedding.png",
+    centerSkill: {
+      hpPercent: 5,
+      atkPercent: 5,
+      affects: { tribes: ["Heartful"] }
+    }
+  },
+  {
+    id: "super-awakened-itsuki-happy-wedding",
+    name: "Super Awakened Itsuki Happy Wedding",
+    tribe: "Brave",
+    gender: "female",
+    saga: "The Quintessential Quintuplets",
+    rank: "UZ+",
+    hp0: 1685,
+    hp10: 2022,
+    atk0: 1645,
+    atk10: 1974,
+    image: "img/Superawakeneditsukihappywedding.png",
+    centerSkill: {
+      hpPercent: 5,
+      atkPercent: 5,
+      affects: { tribes: ["Brave"] }
     }
   },
   {
@@ -2174,56 +2374,3 @@ const characters = [
     }
   }
 ];
-
-const normalize = v => String(v ?? "").trim().toLowerCase();
-
-const allSame = (team, prop, value) => {
-  const members = (team || []).filter(Boolean);
-  if (!members.length) return false;
-  const target = normalize(value ?? members[0][prop]);
-  return members.every(m => normalize(m[prop]) === target);
-};
-
-const UNITY_TYPES = {
-  unity: {},
-  femaleunity: { gender: "female" },
-  sameteamunity: { sameTribe: true },
-  sameteamunit: { sameTribe: true },
-  sameteamunits: { sameTribe: true }
-};
-
-function getUnity(character) {
-  if (!character) return null;
-  for (const key of Object.keys(character)) {
-    const type = UNITY_TYPES[key.toLowerCase()];
-    if (type) return { ...character[key], condition: { ...type, ...character[key].condition } };
-  }
-  return null;
-}
-
-function isUnityActive(character, team) {
-  const unity = getUnity(character);
-  if (!unity) return false;
-  const { sameTribe, saga } = unity.condition;
-  if (sameTribe && !allSame(team, "tribe")) return false;
-  if (saga && !allSame(team, "saga", saga)) return false;
-  return true;
-}
-
-function unityAffects(character, member) {
-  const unity = getUnity(character);
-  if (!unity) return false;
-  const { gender } = unity.condition;
-  return !gender || !member || normalize(member.gender) === normalize(gender);
-}
-
-function getUnityBonus(character, team, member) {
-  if (!isUnityActive(character, team) || !unityAffects(character, member)) return { hpPercent: 0, atkPercent: 0 };
-  const { percent = 0, hpPercent = percent, atkPercent = percent } = getUnity(character);
-  return { hpPercent, atkPercent };
-}
-
-function getUnityPercent(character, team, member) {
-  if (!isUnityActive(character, team) || !unityAffects(character, member)) return 0;
-  return getUnity(character).percent ?? 0;
-}
