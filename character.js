@@ -568,7 +568,7 @@ const characters = [
     hp10: 2045,
     atk0: 1626,
     atk10: 1951,
-    image: "img/mamorina.png",
+    image: "img/Mamorina.png",
     centerSkill: {
       hpPercent: 9,
       atkPercent: 1,
@@ -971,7 +971,7 @@ const characters = [
     hp10: 1831,
     atk0: 1749,
     atk10: 1749,
-    image: "img/zazel(tentacles).png",
+    image: "img/Zazel(tentacles).png",
     centerSkill: {
       hpPercent: 9,
       atkPercent: 1,
