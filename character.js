@@ -3805,7 +3805,7 @@ const characters = [
     hp10: 1710,
     atk0: 1475,
     atk10: 1770,
-    image: "img/Flowersummerhanasakamaru.png"
+    image: "img/Hanasakamaru.png"
   }
 ];
 
